@@ -1,0 +1,146 @@
+{
+  "id": "customer-satisfaction-survey",
+  "title": "Customer Satisfaction Survey",
+  "description": "Please help us improve our services by completing this short survey.",
+  "sections": [
+    {
+      "id": "personal-info",
+      "title": "Personal Information",
+      "description": "Please provide some basic information about yourself.",
+      "questions": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Full Name",
+          "placeholder": "Enter your full name",
+          "required": true,
+          "validation": {
+            "minLength": 2,
+            "maxLength": 100
+          }
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email Address",
+          "placeholder": "your.email@example.com",
+          "required": true,
+          "validation": {
+            "pattern": "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"
+          }
+        },
+        {
+          "id": "age",
+          "type": "number",
+          "label": "Age",
+          "placeholder": "Enter your age",
+          "required": false,
+          "validation": {
+            "min": 18,
+            "max": 120
+          }
+        },
+        {
+          "id": "gender",
+          "type": "select",
+          "label": "Gender",
+          "required": false,
+          "options": [
+            { "value": "male", "label": "Male" },
+            { "value": "female", "label": "Female" },
+            { "value": "other", "label": "Other" },
+            { "value": "prefer-not-to-say", "label": "Prefer not to say" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-feedback",
+      "title": "Product Feedback",
+      "description": "Tell us about your experience with our products.",
+      "questions": [
+        {
+          "id": "product-used",
+          "type": "select",
+          "label": "Which product did you use?",
+          "required": true,
+          "options": [
+            { "value": "product-a", "label": "Product A" },
+            { "value": "product-b", "label": "Product B" },
+            { "value": "product-c", "label": "Product C" },
+            { "value": "other", "label": "Other" }
+          ]
+        },
+        {
+          "id": "satisfaction-rating",
+          "type": "rating",
+          "label": "How satisfied are you with our product?",
+          "required": true,
+          "min": 1,
+          "max": 5,
+          "icons": "star"
+        },
+        {
+          "id": "usage-frequency",
+          "type": "radio",
+          "label": "How often do you use our product?",
+          "required": true,
+          "options": [
+            { "value": "daily", "label": "Daily" },
+            { "value": "weekly", "label": "Weekly" },
+            { "value": "monthly", "label": "Monthly" },
+            { "value": "rarely", "label": "Rarely" }
+          ]
+        },
+        {
+          "id": "features-used",
+          "type": "checkbox",
+          "label": "Which features do you use regularly?",
+          "required": false,
+          "options": [
+            { "value": "feature-a", "label": "Feature A" },
+            { "value": "feature-b", "label": "Feature B" },
+            { "value": "feature-c", "label": "Feature C" },
+            { "value": "feature-d", "label": "Feature D" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Additional Feedback",
+      "description": "Please provide any additional comments or suggestions.",
+      "questions": [
+        {
+          "id": "improvements",
+          "type": "textarea",
+          "label": "What improvements would you like to see?",
+          "placeholder": "Enter your suggestions here...",
+          "required": false,
+          "validation": {
+            "maxLength": 500
+          }
+        },
+        {
+          "id": "recommend",
+          "type": "boolean",
+          "label": "Would you recommend our product to others?",
+          "required": true
+        },
+        {
+          "id": "nps",
+          "type": "slider",
+          "label": "How likely are you to recommend us to a friend or colleague? (0-10)",
+          "required": true,
+          "min": 0,
+          "max": 10,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "submitButton": {
+    "text": "Submit Survey",
+    "successMessage": "Thank you for your feedback!"
+  }
+}
